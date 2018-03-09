@@ -1,0 +1,23 @@
+.logo{
+  align-items: center;
+  display:flex;
+}
+
+.logo span{
+  font-size:24px;
+  padding-left:5px;
+}
+
+.logo img{
+  width:48px;
+  height:48px;
+}
+
+
+
+
+
+
+.footer{
+  text-align:center;
+}

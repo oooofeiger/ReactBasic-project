@@ -30,7 +30,9 @@
   "main": "root.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "webpack-dev-server"
+    "start:dev": "webpack-dev-server",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -43,12 +45,15 @@
   },
   "homepage": "https://github.com/oooofeiger/ReactBasic-project#readme",
   "dependencies": {
+    "antd": "^3.2.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-react-html-attrs": "^2.1.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.10",
+    "fetch": "^1.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-responsive": "^4.0.5",
     "react-router-dom": "^4.2.2",
     "style-loader": "^0.20.2",
     "webpack": "^4.1.0",
