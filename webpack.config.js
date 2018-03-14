@@ -3,6 +3,7 @@ var path = require('path');
 
 module.exports = {
 	entry:'./src/js/root.js',
+	devtool: 'inline-source-map',
 	module:{
 		rules:[
 			{
@@ -14,7 +15,10 @@ module.exports = {
 						loader:'babel-loader',
 						options:{
 							presets:['es2015','react'],
-							plugins:['react-html-attrs']
+							plugins:[
+								'react-html-attrs',
+								["import", { libraryName: "antd", style: "css" }]
+							]
 						}
 					}
 				]
