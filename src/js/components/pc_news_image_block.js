@@ -1,0 +1,1 @@
+pc_news_image_block.js
