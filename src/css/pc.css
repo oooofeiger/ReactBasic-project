@@ -88,6 +88,7 @@
     padding-left: 10px;
     width: 460px;
     float: left;
+    margin-left:15px !important;
 }
 
 .tabs_product {
@@ -126,7 +127,7 @@
 }
 
 .ant-card-body {
-    padding: 15px !important;
+    padding: 5px 0 !important;
 }
 
 .leftContainer{
