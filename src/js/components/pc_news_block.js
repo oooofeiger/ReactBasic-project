@@ -15,9 +15,9 @@ export default class PCNewsBlock extends React.Component {
       method: 'GET',
       mode: 'cors'
     };
-    fetch('http://localhost:8080/apis/news/qihoo?kw='+this.props.type+'&site=qq.com&apikey=1TM40J81k53iuIJ1PTiqGEeVNz1ZakIxGHnkx9uKXNM6m7rS2RQZOdFIOUDkapxJ')
+    fetch('http://localhost:8080/juhe/toutiao/index?type='+this.props.type+'&key=ef4a86a03b270aa4be489573bf3f31dd')
     .then(response => response.json())
-    .then(json => this.setState({news:json.data}));
+    .then(json => this.setState({news:json.result.data.slice(0,this.props.count)}));
   }
 
   render(){

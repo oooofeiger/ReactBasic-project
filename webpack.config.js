@@ -43,9 +43,7 @@ module.exports = {
 			}
 		]
 	},
-	plugins:[
 
-	],
 	output:{
 		path:__dirname+'/src/',
 		filename:'bundle.js'

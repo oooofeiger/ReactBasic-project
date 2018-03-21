@@ -83,7 +83,7 @@ class MobileHeader extends React.Component {
 
 
     return (
-      <div id='mobileHeader'>
+      <div id='mobileheader'>
         <header>
           <img src='./src/images/logo.png' alt="logo" />
           <span>ReactNews</span>
@@ -96,7 +96,7 @@ class MobileHeader extends React.Component {
         onOk = {()=>this.setModalVisible(false)} okText='关闭'>
           <Tabs type='card' onChange={this.callback.bind(this)}>
             <TabPane tab="登录" key="1">
-              <Form horizontal onSubmit={this.handleSubmit.bind(this)}>
+              <Form horizontal="true" onSubmit={this.handleSubmit.bind(this)}>
                 <FormItem label="账户">
                   {getFieldDecorator('userName')(<Input type='text' placeholder='请输入您的账号' />)}
                 </FormItem>
@@ -107,7 +107,7 @@ class MobileHeader extends React.Component {
               </Form>
             </TabPane>
             <TabPane tab='注册' key='2'>
-              <Form horizontal onSubmit={this.handleSubmit.bind(this)}>
+              <Form horizontal="true" onSubmit={this.handleSubmit.bind(this)}>
                 <FormItem label="账户">
                 {getFieldDecorator('r_userName')(<Input type='text' placeholder='请输入您的账号' />)}
                 </FormItem>

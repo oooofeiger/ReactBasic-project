@@ -15,9 +15,9 @@ export default class PCImageBlock extends React.Component {
       method: 'GET',
       mode: 'cors'
     };
-    fetch('http://localhost:8080/apis/news/qihoo?kw='+this.props.type+'&site=qq.com&apikey=1TM40J81k53iuIJ1PTiqGEeVNz1ZakIxGHnkx9uKXNM6m7rS2RQZOdFIOUDkapxJ')
+    fetch('http://localhost:8080/juhe/toutiao/index?type='+this.props.type+'&key=ef4a86a03b270aa4be489573bf3f31dd')
     .then(response => response.json())
-    .then(json => this.setState({news:json.data.slice(0,this.props.count)}));
+    .then(json => this.setState({news:json.result.data.slice(0,this.props.count)}));
   }
 
   render(){
@@ -39,11 +39,11 @@ export default class PCImageBlock extends React.Component {
       <div key={index} class='imageblock'>
         <Link to={`details/${item.uniquekey}`} target='_blank'>
           <div class='custom-image'>
-            <img alt='' style={styleImage} src={item.imageUrls[0]} />
+            <img alt='' style={styleImage} src={item.thumbnail_pic_s} />
           </div>
           <div class='custom-card'>
             <h3 style={styleH3}>{item.title}</h3>
-            <p>{item.posterScreenName}</p>
+            <p>{item.author_name}</p>
           </div>
         </Link>
       </div>
@@ -51,8 +51,8 @@ export default class PCImageBlock extends React.Component {
 
     return (
       <div class='topNewsList'>
-        <Card title={this.props.cartTitle} bordered="true" style={{width:this.props.width}}>
-
+        <Card title={this.props.cardTitle} bordered="true" style={{width:this.props.width}}>
+          {newsList}
         </Card>
       </div>
 
