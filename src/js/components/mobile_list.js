@@ -10,22 +10,43 @@ export default class MobileList extends React.Component {
     };
   }
 
-  componentWillMount(){
+  componentDidMount(){
+     this._isMounted = true;
     var myFetchOptions = {
       method: 'GET',
       mode: 'cors'
     };
     fetch('http://localhost:8080/juhe/toutiao/index?type='+this.props.type+'&key=ef4a86a03b270aa4be489573bf3f31dd')
     .then(response => response.json())
-    .then(json => this.setState({news:json.result.data.slice(0,this.props.count)}));
+    .then(json => {
+      if(this._isMounted){
+        this.setState({news:json.result.data.slice(0,this.props.count)})
+      }
+    });
   }
 
+  /*
+关于react中切换路由时报以上错误，实际的原因是因为在组件挂载（mounted）之后进行了
+异步操作，比如ajax请求或者设置了定时器等，而你在callback中进行了setState操作。
+当你切换路由时，组件已经被卸载（unmounted）了，此时异步操作中callback还在执行，
+因此setState没有得到值。
+  */
+  componentWillUnMount() {
+    this._isMounted = false;
+  }
+linkClick(e){
+var ele = this.refs._url
+debugger
+
+  console.log(ele)
+  window.location.href = ele.getAttribute('data-url');
+}
   render(){
     const {news} = this.state;
     const newsList = news.length ?
     news.map((item,index)=>(
       <section key={index} class="m_article list-item special_section clearfix">
-        <Link to={`detail/${item.uniquekey}`}>
+        <div ref="_url" onClick={this.linkClick.bind(this)} data-url={`/detail/${item.url.slice(+item.url.indexOf('com/')+4)}`}>
           <div class="m_article_img">
             <img src={item.thumbnail_pic_s} alt={item.title} />
           </div>
@@ -40,7 +61,7 @@ export default class MobileList extends React.Component {
               </div>
             </div>
           </div>
-        </Link>
+        </div>
       </section>
     )) : '正在加载...'
 

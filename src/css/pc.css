@@ -137,7 +137,7 @@
 
 /*image block******START*****/
 .imageblock {
-    float: left;
+    display:inline-block;
 }
 
 .custom-card {

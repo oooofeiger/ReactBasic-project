@@ -10,14 +10,23 @@ export default class PCImageBlock extends React.Component {
     };
   }
 
-  componentWillMount(){
+  componentDidMount(){
+    this._isMounted = true;
     var myFetchOptions = {
       method: 'GET',
       mode: 'cors'
     };
     fetch('http://localhost:8080/juhe/toutiao/index?type='+this.props.type+'&key=ef4a86a03b270aa4be489573bf3f31dd')
     .then(response => response.json())
-    .then(json => this.setState({news:json.result.data.slice(0,this.props.count)}));
+    .then(json => {
+      if(this._isMounted){
+        this.setState({news:json.result.data.slice(0,this.props.count)})
+      }
+    });
+  }
+
+  componentWillUnMount() {
+    this._isMounted = false;
   }
 
   render(){
@@ -36,8 +45,8 @@ export default class PCImageBlock extends React.Component {
 
     const newsList = news.length ?
     news.map((item,index)=>(
-      <div key={index} class='imageblock'>
-        <Link to={`details/${item.uniquekey}`} target='_blank'>
+      <div key={index} class='imageblock' style={{width:this.props.imgWidth}}>
+        <Link to={item.url} target='_blank'>
           <div class='custom-image'>
             <img alt='' style={styleImage} src={item.thumbnail_pic_s} />
           </div>
@@ -52,7 +61,7 @@ export default class PCImageBlock extends React.Component {
     return (
       <div class='topNewsList'>
         <Card title={this.props.cardTitle} bordered="true" style={{width:this.props.width}}>
-          {newsList}
+            {newsList}
         </Card>
       </div>
 

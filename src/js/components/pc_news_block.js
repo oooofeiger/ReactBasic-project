@@ -10,14 +10,23 @@ export default class PCNewsBlock extends React.Component {
     };
   }
 
-  componentWillMount(){
+  componentDidMount(){
+    this._isMounted = true;
     var myFetchOptions = {
       method: 'GET',
       mode: 'cors'
     };
     fetch('http://localhost:8080/juhe/toutiao/index?type='+this.props.type+'&key=ef4a86a03b270aa4be489573bf3f31dd')
     .then(response => response.json())
-    .then(json => this.setState({news:json.result.data.slice(0,this.props.count)}));
+    .then(json => {
+      if(this._isMounted){
+        this.setState({news:json.result.data.slice(0,this.props.count)})
+      }
+    });
+  }
+
+  componentWillUnMount() {
+    this._isMounted = false;
   }
 
   render(){
@@ -25,7 +34,7 @@ export default class PCNewsBlock extends React.Component {
     const newsList = news.length ?
     news.map((item,index)=>(
       <li key={index}>
-        <Link to={`details/${item.uniquekey}`} target='_blank'>{item.title}</Link>
+        <Link to={item.url} target='_blank'>{item.title}</Link>
       </li>
     )) : '正在加载...'
 
