@@ -1,7 +1,8 @@
 import React from 'react';
 import {Row,Col} from 'antd';
 import { Menu, Icon, Tabs, Message, Form, Input, Button, CheckBox, Modal} from 'antd';
-import { Link} from 'react-router-dom'
+import { Link} from 'react-router-dom';
+
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 const FormItem = Form.Item;
@@ -70,7 +71,7 @@ class PCHeader extends React.Component {
     localStorage.setItem('userNickName',formData.r_userName);
 
     this.setState({hasLogined:true});
-   
+
     // message.success('请求成功！')
     this.setModalVisible(false);
 
@@ -104,9 +105,9 @@ class PCHeader extends React.Component {
     <Menu.Item key='logout' class='register'>
       <Button type='primary' htmlType='button'>{this.state.userNickName}</Button>
       &nbsp;&nbsp;
-    
+      <Link to={`/usercenter`} target="_blank">
         <Button type='bashed' htmlType='button'>个人中心</Button>
-      
+      </Link>
       &nbsp;&nbsp;
       <Button type='ghost' htmlType='button' onClick={this.logout.bind(this)}>退出</Button>
     </Menu.Item>

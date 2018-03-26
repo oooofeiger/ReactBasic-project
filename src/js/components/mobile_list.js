@@ -35,9 +35,7 @@ export default class MobileList extends React.Component {
     this._isMounted = false;
   }
 linkClick(e){
-var ele = this.refs._url
-debugger
-
+  var ele = this.refs._url;
   console.log(ele)
   window.location.href = ele.getAttribute('data-url');
 }

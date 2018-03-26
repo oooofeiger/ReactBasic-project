@@ -6,6 +6,8 @@ import MediaQuery from 'react-responsive';
 import 'antd/dist/antd.css';
 import PCIndex from './components/pc_index';
 import MobileIndex from './components/mobile_index';
+import PCUserCenter from './components/pc_userCenter';
+
 
 class Root extends React.Component{
 
@@ -14,7 +16,8 @@ class Root extends React.Component{
       <Router>
         <div>
           <MediaQuery query="(min-device-width:1224px)">
-            <PCIndex />
+            <Route exact path='/' component={PCIndex}></Route>
+            <Route path='/usercenter' component={PCUserCenter}></Route>
           </MediaQuery>
           <MediaQuery query="(max-device-width:1224px)">
             <MobileIndex />
