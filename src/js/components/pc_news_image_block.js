@@ -42,17 +42,22 @@ export default class PCImageBlock extends React.Component {
       overflow: "hidden",
       textOverflow: "ellipsis"
     };
+    const authorP = {
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap"
+    }
 
     const newsList = news.length ?
     news.map((item,index)=>(
       <div key={index} class='imageblock' style={{width:this.props.imgWidth}}>
         <Link to={item.url} target='_blank'>
           <div class='custom-image'>
-            <img alt='' style={styleImage} src={item.thumbnail_pic_s} />
+            <img alt='' title={item.title} style={styleImage} src={item.thumbnail_pic_s} />
           </div>
           <div class='custom-card'>
-            <h3 style={styleH3}>{item.title}</h3>
-            <p>{item.author_name}</p>
+            <h3 title={item.title} style={styleH3}>{item.title}</h3>
+            <p title={item.author_name} style={authorP}>{item.author_name}</p>
           </div>
         </Link>
       </div>

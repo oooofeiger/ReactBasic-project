@@ -7,6 +7,7 @@ import 'antd/dist/antd.css';
 import PCIndex from './components/pc_index';
 import MobileIndex from './components/mobile_index';
 import PCUserCenter from './components/pc_userCenter';
+import MobileUserCenter from './components/mobile_userCenter';
 
 
 class Root extends React.Component{
@@ -20,7 +21,8 @@ class Root extends React.Component{
             <Route path='/usercenter' component={PCUserCenter}></Route>
           </MediaQuery>
           <MediaQuery query="(max-device-width:1224px)">
-            <MobileIndex />
+            <Route exact path='/' component={MobileIndex}></Route>
+            <Route path='/usercenter' component={MobileUserCenter}></Route>
           </MediaQuery>
         </div>
       </Router>

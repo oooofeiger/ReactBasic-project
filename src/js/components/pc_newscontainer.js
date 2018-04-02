@@ -2,6 +2,7 @@ import React from 'react';
 import {Row ,Col ,Tabs , Carousel} from 'antd';
 import PCNewsBlock from './pc_news_block';
 import PCImageBlock from './pc_news_image_block';
+import PCProducts from './pc_products';
 const TabPane = Tabs.TabPane;
 
 export default class PCNewsContainer extends React.Component{
@@ -32,14 +33,19 @@ export default class PCNewsContainer extends React.Component{
 						</div>
 						<Tabs class='tabs_news'>
 							<TabPane tab='热门' key='1'>
-								<PCNewsBlock width='100%' count={20} type='top' bordered='true' />
+								<PCNewsBlock width='100%' count={22} type='top' bordered='true' />
 							</TabPane>
 
 							<TabPane tab='社会' key='2'>
-								<PCNewsBlock width='100%' count={20} type='shehui' bordered='true' />
+								<PCNewsBlock width='100%' count={22} type='shehui' bordered='true' />
 							</TabPane>
 							<TabPane tab='娱乐' key='3'>
-								<PCNewsBlock width='100%' count={20} type='yule' bordered='true' />
+								<PCNewsBlock width='100%' count={22} type='yule' bordered='true' />
+							</TabPane>
+						</Tabs>
+						<Tabs class='tabs_product'>
+							<TabPane tab='ReactNews 产品' key='1'>
+								<PCProducts />
 							</TabPane>
 						</Tabs>
 						<div>

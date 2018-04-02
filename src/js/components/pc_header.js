@@ -105,7 +105,7 @@ class PCHeader extends React.Component {
     <Menu.Item key='logout' class='register'>
       <Button type='primary' htmlType='button'>{this.state.userNickName}</Button>
       &nbsp;&nbsp;
-      <Link to={`/usercenter`} target="_blank">
+      <Link to={`/usercenter`}>
         <Button type='bashed' htmlType='button'>个人中心</Button>
       </Link>
       &nbsp;&nbsp;
@@ -143,9 +143,6 @@ class PCHeader extends React.Component {
               <Menu.Item key='guoji'>
                 <Icon type="appstore" />国际
               </Menu.Item>
-              <Menu.Item key='yule'>
-                <Icon type="appstore" />娱乐
-              </Menu.Item>
               <Menu.Item key='keji'>
                 <Icon type="appstore" />科技
               </Menu.Item>
@@ -155,7 +152,7 @@ class PCHeader extends React.Component {
               <Menu.Item key='shishang'>
                 <Icon type="appstore" />时尚
               </Menu.Item>
-              {userShow}
+              /*{userShow}*/
             </Menu>
 
             <Modal title='用户中心' wrapClassName='vertical-center-modal'
