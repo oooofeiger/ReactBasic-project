@@ -1,0 +1,29 @@
+{
+  "app":[
+    {
+      "name":"ReactNews",
+      "script":"/src/bundle.js",
+      "env":{
+        "COMMON_VARIABLE":"true"
+      },
+      "env_production":{
+        "NODE_ENV":"production"
+      }
+    }
+  ],
+  "deploy":{
+    "production":{
+      "user":"manager",
+      "host":["120.79.60.217"],
+      "port":22,
+      "ref":"origin/master",
+      "repo":"git@github.com:oooofeiger/ReactBasic-project.git",
+      "path":"/www/ReactNews/production",
+      "ssh_options":"StrictHostKeyChecking=no",
+      "env":{
+        "NODE_ENV":"production"
+      }
+    }
+  }
+
+}
