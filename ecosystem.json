@@ -2,8 +2,13 @@
   "app":[
     {
       "name":"ReactNews",
-      "script":"app.js"
-
+      "script":"app.js",
+      "env":{
+        "COMMON_VARIABLE":"true"
+      },
+      "env_production":{
+        "NODE_ENV":"production"
+      }
     }
   ],
   "deploy":{
