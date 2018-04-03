@@ -2,7 +2,7 @@
   "app":[
     {
       "name":"ReactNews",
-      "script":"/",
+      "script":"/app.js",
       "env":{
         "COMMON_VARIABLE":"true"
       },
