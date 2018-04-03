@@ -15,7 +15,6 @@
     "production":{
       "user":"manager",
       "host":["120.79.60.217"],
-      "port":22,
       "ref":"origin/master",
       "repo":"git@github.com:oooofeiger/ReactBasic-project.git",
       "path":"/www/ReactNews/production",
