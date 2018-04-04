@@ -16,7 +16,7 @@ export default class MobileList extends React.Component {
       method: 'GET',
       mode: 'cors'
     };
-    fetch('http://localhost:8080/juhe/toutiao/index?type='+this.props.type+'&key=ef4a86a03b270aa4be489573bf3f31dd')
+    fetch('http://v.juhe.cn/toutiao/index?type='+this.props.type+'&key=ef4a86a03b270aa4be489573bf3f31dd')
     .then(response => response.json())
     .then(json => {
       if(this._isMounted){
@@ -44,7 +44,8 @@ linkClick(e){
     const newsList = news.length ?
     news.map((item,index)=>(
       <section key={index} class="m_article list-item special_section clearfix">
-        <div ref="_url" onClick={this.linkClick.bind(this)} data-url={`/detail/${item.url.slice(+item.url.indexOf('com/')+4)}`}>
+        /*<div ref="_url" onClick={this.linkClick.bind(this)} data-url={`/detail/${item.url.slice(+item.url.indexOf('com/')+4)}`}>*/
+        <div ref="_url" onClick={this.linkClick.bind(this)} data-url={item.url}>
           <div class="m_article_img">
             <img src={item.thumbnail_pic_s} alt={item.title} />
           </div>
