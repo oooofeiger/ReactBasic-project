@@ -1,5 +1,5 @@
 {
-  "app":[
+  "apps":[
     {
       "name":"ReactNews",
       "script":"app.js",
