@@ -3,12 +3,11 @@ var path = require('path');
 
 module.exports = {
 	entry:'./src/js/root.js',
-	devtool: 'inline-source-map',
 	module:{
 		rules:[
 			{
 				test:/\.js?$/,
-				exclude:path.resolve(__dirname,'./node_modules/'),
+				exclude:/(node_modules|bower_components)/,
 				use:
 				[
 					{
