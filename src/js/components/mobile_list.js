@@ -44,7 +44,7 @@ linkClick(e){
     const newsList = news.length ?
     news.map((item,index)=>(
       <div key={index} class="m_article list-item special_section clearfix">
-        <div ref="_url" onClick={this.linkClick.bind(this)} data-url={item.url}>
+        <div ref="_url" onClick={this.linkClick.bind(this)} data-url={`http://localhost:8080/detail/${item.url.slice(+item.url.indexOf('com/')+4)}`}>
           <div class="m_article_img">
             <img src={item.thumbnail_pic_s} alt={item.title} />
           </div>
