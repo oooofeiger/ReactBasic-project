@@ -43,8 +43,7 @@ linkClick(e){
     const {news} = this.state;
     const newsList = news.length ?
     news.map((item,index)=>(
-      <section key={index} class="m_article list-item special_section clearfix">
-        /*<div ref="_url" onClick={this.linkClick.bind(this)} data-url={`/detail/${item.url.slice(+item.url.indexOf('com/')+4)}`}>*/
+      <div key={index} class="m_article list-item special_section clearfix">
         <div ref="_url" onClick={this.linkClick.bind(this)} data-url={item.url}>
           <div class="m_article_img">
             <img src={item.thumbnail_pic_s} alt={item.title} />
@@ -61,8 +60,8 @@ linkClick(e){
             </div>
           </div>
         </div>
-      </section>
-    )) : '正在加载...'
+      </div>
+    )) : '正在加载...';
 
     return (
       <div>
