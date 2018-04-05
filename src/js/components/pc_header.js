@@ -3,8 +3,8 @@ import {Row,Col} from 'antd';
 import { Menu, Icon, Tabs, Message, Form, Input, Button, CheckBox, Modal} from 'antd';
 import { Link} from 'react-router-dom';
 
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
+// const SubMenu = Menu.SubMenu;
+// const MenuItemGroup = Menu.ItemGroup;
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
 
@@ -152,7 +152,6 @@ class PCHeader extends React.Component {
               <Menu.Item key='shishang'>
                 <Icon type="appstore" />时尚
               </Menu.Item>
-              /*{userShow}*/
             </Menu>
 
             <Modal title='用户中心' wrapClassName='vertical-center-modal'

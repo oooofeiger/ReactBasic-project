@@ -2,8 +2,8 @@ import React from 'react';
 import {Row,Col} from 'antd';
 import { Menu, Icon, Tabs, Message, Form, Input, Button, CheckBox, Modal} from 'antd';
 import {Router, Route, Link, browserHistory} from 'react-router'
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
+// const SubMenu = Menu.SubMenu;
+// const MenuItemGroup = Menu.ItemGroup;
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
 
