@@ -16,7 +16,7 @@ export default class PCImageBlock extends React.Component {
       method: 'GET',
       mode: 'cors'
     };
-    fetch('http://localhost:8080/juhe/toutiao/index?type='+this.props.type+'&key=ef4a86a03b270aa4be489573bf3f31dd')
+    fetch('http://v.juhe.cn/toutiao/index?type='+this.props.type+'&key=ef4a86a03b270aa4be489573bf3f31dd')
     .then(response => response.json())
     .then(json => {
       if(this._isMounted){
