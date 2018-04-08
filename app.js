@@ -1,7 +1,6 @@
 var express = require('express');
 var path = require('path');
 var app = new express();
-var router = app.router();
 
 app.use(express.static(__dirname))
 app.all('*', function(req, res, next) {
