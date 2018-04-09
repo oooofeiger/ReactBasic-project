@@ -73,6 +73,7 @@
 }
 
 .topNewsList {
+    width:100%;
     float: left;
     text-align: left;
     font-size: 14px;
