@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import {Switch,BrowserRouter as Router,Route,Redirect,Link} from 'react-router-dom';
 import {Button} from 'antd';
 import MediaQuery from 'react-responsive';
-import 'antd/dist/antd.css';
 import PCIndex from './components/pc_index';
 import MobileIndex from './components/mobile_index';
 import PCUserCenter from './components/pc_userCenter';
