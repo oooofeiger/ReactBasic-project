@@ -11,15 +11,13 @@ class MobileNewsDetails extends React.Component{
       newsItem:''
     }
   }
-
+debugger;
   componentDidMount(){
     debugger;
     console.log(this.props)
     fetch('http://www.feiger.com.cn/Handler.ashx?action=getnewsitem&uniquekey=' + this.props.match.params.uniquekey)
     .then(res=>res.json())
     .then(json => {
-      var div = document.createElement('div')
-
       this.setState({newsItem: json.pagecontent});
       document.title = this.state.newsItem.title + ' - React News | React 驱动的新闻平台';
     })
