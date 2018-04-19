@@ -4,14 +4,15 @@ import MobileFooter from './mobile_footer';
 import {Row, Col, BackTop} from 'antd';
 
 export default class PCNewsDetails extends React.Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       newsItem:''
     }
   }
 
   componentDidMount(){
+    console.log(this.props)
     fetch('http://www.feiger.com.cn/Handler.ashx?action=getnewsitem&uniquekey=' + this.props.params.uniquekey)
     .then(res=>res.json())
     .then(json => {
