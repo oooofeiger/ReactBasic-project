@@ -3,7 +3,7 @@ import MobileHeader from './mobile_header';
 import MobileFooter from './mobile_footer';
 import {Row, Col, BackTop} from 'antd';
 
-export default class PCNewsDetails extends React.Component{
+class MobileNewsDetails extends React.Component{
   constructor(props){
     super(props);
     this.state = {
@@ -38,7 +38,6 @@ export default class PCNewsDetails extends React.Component{
 
     )
   }
-
-
-
 }
+const MobileDetails = withRouter(MobileNewsDetails);
+export default MobileDetails;
