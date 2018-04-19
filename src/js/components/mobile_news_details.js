@@ -14,7 +14,7 @@ export default class PCNewsDetails extends React.Component{
   componentDidMount(){
     console.log(this.props)
     fetch('http://www.feiger.com.cn/Handler.ashx?action=getnewsitem&uniquekey=' + this.props.match.params.uniquekey)
-    .then(res=>res.json())
+    .then(res=>res.json({newsItem: json}))
     .then(json => {
       this.setState();
       document.title = this.state.newsItem.title + ' - React News | React 驱动的新闻平台';
