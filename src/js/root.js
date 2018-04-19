@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Switch,BrowserRouter as Router,Route,Redirect,Link,withRouter} from 'react-router-dom';
+import {Switch,BrowserRouter as Router,Route,Redirect,Link} from 'react-router-dom';
 import {Button} from 'antd';
 import MediaQuery from 'react-responsive';
 import PCIndex from './components/pc_index';

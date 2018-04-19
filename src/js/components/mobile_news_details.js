@@ -2,6 +2,7 @@ import React from 'react';
 import MobileHeader from './mobile_header';
 import MobileFooter from './mobile_footer';
 import {Row, Col, BackTop} from 'antd';
+import {withRouter} from 'react-router-dom';
 
 class MobileNewsDetails extends React.Component{
   constructor(props){
