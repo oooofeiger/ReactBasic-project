@@ -13,6 +13,7 @@ class MobileNewsDetails extends React.Component{
   }
 
   componentDidMount(){
+    debugger;
     console.log(this.props)
     fetch('http://www.feiger.com.cn/Handler.ashx?action=getnewsitem&uniquekey=' + this.props.match.params.uniquekey)
     .then(res=>res.json())
