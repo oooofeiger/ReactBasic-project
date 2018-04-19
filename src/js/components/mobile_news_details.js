@@ -40,5 +40,4 @@ class MobileNewsDetails extends React.Component{
     )
   }
 }
-const MobileDetails = withRouter(MobileNewsDetails);
-export default MobileDetails;
+export default MobileNewsDetails;
