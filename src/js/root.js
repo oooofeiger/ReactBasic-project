@@ -24,7 +24,7 @@ class Root extends React.Component{
           </MediaQuery>
           <MediaQuery query="(max-device-width:1224px)">
             <Route exact path='/' component={MobileIndex}></Route>
-            <Route path="/details/:uniquekey" component={PCNewsDetails}></Route>
+            <Route path="/details/:uniquekey" component={MobileNewsDetails}></Route>
             <Route path='/usercenter' component={MobileUserCenter}></Route>
           </MediaQuery>
         </div>
