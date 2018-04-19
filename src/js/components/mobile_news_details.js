@@ -13,7 +13,7 @@ export default class PCNewsDetails extends React.Component{
 
   componentDidMount(){
     console.log(this.props)
-    fetch('http://www.feiger.com.cn/Handler.ashx?action=getnewsitem&uniquekey=' + this.props.params.uniquekey)
+    fetch('http://www.feiger.com.cn/Handler.ashx?action=getnewsitem&uniquekey=' + this.props.match.params.uniquekey)
     .then(res=>res.json())
     .then(json => {
       this.setState();
