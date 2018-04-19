@@ -28,12 +28,9 @@ export default class PCNewsDetails extends React.Component{
       <div>
         <MobileHeader />
         <Row>
-          <Col span={2}></Col>
-          <Col span={14} class='container'>
+          <Col span={24} class='container'>
             <div class='articleContainer' dangerouslySetInnerHTML={{__html:this.state.newsItem}}></div>
           </Col>
-          <Col span={6}></Col>
-          <Col span={2}></Col>
         </Row>
         <MobileFooter />
         <BackTop />
