@@ -9,6 +9,9 @@ module.exports = {
 		app:'./src/js/root.js'
 		// vender:'React'
 	},
+	devServer: {
+ 		historyApiFallback: true
+	},
 	module:{
 		rules:[
 			{
