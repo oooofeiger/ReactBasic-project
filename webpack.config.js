@@ -5,7 +5,10 @@ var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 // var cssExtract = new ExtractTextWebpackPlugin('css.css');
 
 module.exports = {
-	entry:'./src/js/root.js',
+	entry:{
+		app:'./src/js/root.js'
+		// vender:'React'
+	},
 	module:{
 		rules:[
 			{
@@ -68,5 +71,6 @@ module.exports = {
 	output:{
 		path:__dirname+'/src/',
 		filename:'bundle.js'
+		// libraryTarget: "umd"
 	}
 }
