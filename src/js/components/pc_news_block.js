@@ -16,7 +16,7 @@ export default class PCNewsBlock extends React.Component {
       method: 'GET',
       mode: 'cors'
     };
-    fetch('http://www.feiger.com.cn/toutiao/index?type='+this.props.type+'&key=ef4a86a03b270aa4be489573bf3f31dd')
+    fetch('http://www.feiger.com.cn/Handler.ashx?action=getnews&type='+this.props.type+'&count='+this.props.count)
     .then(response => response.json())
     .then(json => {
       if(this._isMounted){

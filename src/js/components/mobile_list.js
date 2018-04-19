@@ -16,7 +16,7 @@ export default class MobileList extends React.Component {
       method: 'GET',
       mode: 'cors'
     };
-    fetch('http://www.feiger.com.cn/toutiao/index?type='+this.props.type+'&key=ef4a86a03b270aa4be489573bf3f31dd')
+    fetch('http://www.feiger.com.cn/Handler.ashx?action=getnews&type='+this.props.type+'&count='+this.props.count)
     .then(response => response.json())
     .then(json => {
       if(this._isMounted){
@@ -34,18 +34,18 @@ export default class MobileList extends React.Component {
   componentWillUnMount() {
     this._isMounted = false;
   }
-linkClick(e){
-  var ele = this.refs._url;
-  console.log(ele);
-  this.props.history.push(ele.getAttribute('data-url'))
-  // window.location.href = ele.getAttribute('data-url');
-}
+// linkClick(e){
+//   var ele = this.refs._url;
+//   console.log(ele);
+//   this.props.history.push(ele.getAttribute('data-url'))
+//   // window.location.href = ele.getAttribute('data-url');
+// }
   render(){
     const {news} = this.state;
     const newsList = news.length ?
     news.map((item,index)=>(
       <div key={index} class="m_article list-item special_section clearfix">
-        <div ref="_url" onClick={this.linkClick.bind(this)} data-url={`http://www.feiger.com.cn/${item.url.slice(+item.url.indexOf('com/')+4)}`}>
+        <Link to={`details/${item.uniquekey}`}>
           <div class="m_article_img">
             <img src={item.thumbnail_pic_s} alt={item.title} />
           </div>
@@ -55,12 +55,12 @@ linkClick(e){
             </div>
             <div class="m_article_desc clearfix">
               <div class="m_article_desc_l">
-                <span class="m_article_channel">{item.type}</span>
+                <span class="m_article_channel">{item.realtype}</span>
                 <span class="m_article_time">{item.date}</span>
               </div>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
     )) : '正在加载...';
 
