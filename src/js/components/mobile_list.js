@@ -20,7 +20,7 @@ export default class MobileList extends React.Component {
     .then(response => response.json())
     .then(json => {
       if(this._isMounted){
-        this.setState({news:json.result.data.slice(0,this.props.count)})
+        this.setState({news:json.slice(0,this.props.count)})
       }
     });
   }
