@@ -1,7 +1,9 @@
 html{
   font-size: 50px;
 }
-
+#J_article img {
+    width: 100%;
+}
 #mobileheader{
   flex: 1;
   background: #f6f6f6;
