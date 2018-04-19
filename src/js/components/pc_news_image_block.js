@@ -16,7 +16,7 @@ export default class PCImageBlock extends React.Component {
       method: 'GET',
       mode: 'cors'
     };
-    fetch('http://www.feiger.com.cn/Handler.ashx?action=getnews&type='+this.props.type+'&count='+this.props.count);
+    fetch('http://www.feiger.com.cn/Handler.ashx?action=getnews&type='+this.props.type+'&count='+this.props.count)
     .then(response => response.json())
     .then(json => {
       if(this._isMounted){
