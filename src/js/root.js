@@ -18,13 +18,13 @@ class Root extends React.Component{
       <Router>
         <div>
           <MediaQuery query="(min-device-width:1224px)">
-            <Route exact path='/' component={PCIndex} key={new Date().getTime()}></Route>
+            <Route exact path='/' component={PCIndex} key={new Date().getTime()+1}></Route>
             <Route path="/details/:uniquekey" component={PCNewsDetails} key={new Date().getTime()}></Route>
             <Route path='/usercenter' component={PCUserCenter} ></Route>
           </MediaQuery>
           <MediaQuery query="(max-device-width:1224px)">
-            <Route exact path='/' component={MobileIndex} key={new Date().getTime()}></Route>
-            <Route path="/details/:uniquekey" component={MobileNewsDetails} key={new Date().getTime()}></Route>
+            <Route exact path='/' component={MobileIndex} key={new Date().getTime()+2}></Route>
+            <Route path="/details/:uniquekey" component={MobileNewsDetails} key={new Date().getTime()+3}></Route>
             <Route path='/usercenter' component={MobileUserCenter}></Route>
           </MediaQuery>
         </div>
